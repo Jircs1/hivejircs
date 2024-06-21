@@ -6,7 +6,7 @@ WORKDIR /genesis
 RUN go build .
 
 # Build the runner container.
-FROM alpine:latest
+FROM alpine:3
 ADD . /
 COPY --from=builder /genesis/genesis /
 ENTRYPOINT ["./genesis"]
