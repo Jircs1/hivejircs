@@ -17,7 +17,7 @@ COPY . .
 RUN go build -v -o devp2p-simulator
 
 # Build the simulation run container.
-FROM alpine:latest
+FROM alpine:3
 ADD . /source
 WORKDIR /source
 COPY --from=geth-builder /go-ethereum/devp2p ./devp2p
