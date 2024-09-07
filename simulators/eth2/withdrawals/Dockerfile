@@ -11,7 +11,7 @@ WORKDIR /source/withdrawals
 RUN go build -o ./sim .
 
 # Build the runner container.
-FROM alpine:latest
+FROM alpine:3.20.3
 ADD . /
 COPY --from=builder /source/withdrawals/sim /
 
