@@ -11,7 +11,7 @@ RUN apk add --update bash curl jq git make gcc libc-dev linux-headers
 RUN make geth
 RUN mv ./build/bin/geth /usr/local/bin/geth
 
-FROM alpine:latest
+FROM alpine:3.20.3
 RUN apk add --update bash curl jq
 COPY --from=builder /usr/local/bin/geth /usr/local/bin/geth
 
