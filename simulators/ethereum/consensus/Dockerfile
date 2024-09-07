@@ -11,7 +11,7 @@ WORKDIR /source
 RUN go build -v .
 
 # Build the simulator run container.
-FROM alpine:latest
+FROM alpine:3.20.3
 ADD . /source
 WORKDIR /source
 COPY --from=builder /source/consensus .
