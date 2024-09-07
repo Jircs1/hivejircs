@@ -11,7 +11,7 @@ WORKDIR /source/engine
 RUN go build -o ./sim .
 
 # Build the runner container.
-FROM alpine:latest
+FROM alpine:3.20.3
 ADD . /
 COPY --from=builder /source/engine/sim /
 
