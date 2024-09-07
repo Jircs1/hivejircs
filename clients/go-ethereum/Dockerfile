@@ -3,7 +3,7 @@ ARG tag=latest
 
 FROM $baseimage:$tag as builder
 
-FROM alpine:latest
+FROM alpine:3.20.3
 RUN apk add --update bash curl jq
 COPY --from=builder /usr/local/bin/geth /usr/local/bin/geth
 
